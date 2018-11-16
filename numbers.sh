@@ -1,15 +1,16 @@
 #! /bin/bash
 # numbers.sh
+# Blake Fuller
 echo "Enter a positive integer: "
-read NUMBERS
-while echo $NUMBERS | egrep -v "^[1-9]$" > /dev/null 2>&1
-N =$((N+1))
-if [ $((N%2)) -eq 0 ]
-	echo "Even"
-else
-	echo "Odd"
+read NUMBER
+N=1
+while [ $N -le $NUMBER ]
 do
-	echo "Please enter a positive integer: "
-	read NUMBERS
+	if [ $((N%2)) -eq 0 ]
+	then
+		echo "$N Even"
+	else
+		echo "$N Odd"
+	fi
+N=$((N+1))
 done
-echo "Accepted."
